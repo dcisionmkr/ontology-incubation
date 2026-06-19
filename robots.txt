@@ -20,4 +20,16 @@ Allow: /
 User-agent: ClaudeBot
 Allow: /
 
-Sitemap: https://ontology-incubation.netlify.app/sitemap.xml
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+Sitemap: https://ontology-incubation.pages.dev/sitemap.xml
