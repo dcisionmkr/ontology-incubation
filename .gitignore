@@ -1,0 +1,16 @@
+# === 秘密ファイル（絶対にコミットしない）===
+oauth_client.json
+token*.json
+*token*.json
+*credentials*.json
+credentials.json
+*.env
+.env
+
+# === Netlify ===
+.netlify/
+
+# === OS / エディタ / AI ===
+.DS_Store
+.claude/
+Thumbs.db

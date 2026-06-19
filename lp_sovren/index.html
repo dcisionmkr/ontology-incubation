@@ -1,0 +1,936 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>意思決定株式会社 — あなたの現場が、あなたの最強の資産になる。</title>
+  <meta name="description" content="全国の生産者・飲食店・小さな事業者のために作った実装フレームワーク、SOVREN。あなたの現場知をAIに渡し、一人でも複数の事業を動かせる構造を作る。">
+  <meta property="og:title" content="意思決定株式会社 — あなたの現場が、あなたの最強の資産になる。">
+  <meta property="og:description" content="全国の生産者・飲食店・小さな事業者のために作った実装フレームワーク、SOVREN。あなたの現場知をAIに渡し、一人でも複数の事業を動かせる構造を作る。">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="ja_JP">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:creator" content="@kichisinger">
+  <meta name="author" content="伊藤雄吉 / 意思決定株式会社">
+
+  <style>
+    /* ===== RESET & BASE ===== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #F7F5F0;
+      --bg-dark: #1A1A18;
+      --text: #1A1A18;
+      --text-mid: #4A4A45;
+      --text-light: #8A8A82;
+      --accent: #2D5A3D;
+      --accent-light: #4A8A5F;
+      --border: #DDD9D0;
+      --white: #FFFFFF;
+
+      --font-sans: 'Noto Sans JP', 'Hiragino Kaku Gothic ProN', 'Yu Gothic', sans-serif;
+      --font-serif: 'Noto Serif JP', 'Hiragino Mincho ProN', 'Yu Mincho', serif;
+
+      --max-w: 840px;
+      --section-gap: 120px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-sans);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.8;
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ===== TYPOGRAPHY ===== */
+    h1 { font-size: clamp(2rem, 5vw, 3.2rem); line-height: 1.25; font-weight: 700; letter-spacing: -0.02em; }
+    h2 { font-size: clamp(1.5rem, 3.5vw, 2.2rem); line-height: 1.3; font-weight: 700; letter-spacing: -0.01em; }
+    h3 { font-size: clamp(1.1rem, 2.5vw, 1.4rem); line-height: 1.4; font-weight: 700; }
+    p  { line-height: 1.9; color: var(--text-mid); }
+
+    /* ===== LAYOUT ===== */
+    .container {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    section { padding: var(--section-gap) 0; }
+
+    /* ===== NAV ===== */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: rgba(247, 245, 240, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 24px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--text);
+      text-decoration: none;
+      letter-spacing: 0.03em;
+    }
+
+    .nav-cta {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--white);
+      background: var(--accent);
+      padding: 8px 18px;
+      border-radius: 4px;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+
+    .nav-cta:hover { background: var(--accent-light); }
+
+    /* ===== HERO ===== */
+    #hero {
+      padding-top: calc(var(--section-gap) + 60px);
+      padding-bottom: var(--section-gap);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .hero-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      color: var(--accent);
+      text-transform: uppercase;
+      margin-bottom: 32px;
+    }
+
+    .hero-title {
+      margin-bottom: 32px;
+    }
+
+    .hero-body {
+      font-size: 1.05rem;
+      max-width: 600px;
+      margin-bottom: 48px;
+      line-height: 2;
+    }
+
+    .hero-ctas {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      display: inline-block;
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--white);
+      background: var(--accent);
+      padding: 14px 28px;
+      border-radius: 4px;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+
+    .btn-primary:hover { background: var(--accent-light); }
+
+    .btn-secondary {
+      display: inline-block;
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--text);
+      border: 1.5px solid var(--text);
+      padding: 14px 28px;
+      border-radius: 4px;
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+
+    .btn-secondary:hover { opacity: 0.6; }
+
+    /* ===== FOR YOU ===== */
+    #for-you { background: var(--bg-dark); color: var(--white); }
+
+    #for-you .section-label { color: rgba(255,255,255,0.4); }
+    #for-you h2 { color: var(--white); }
+    #for-you p { color: rgba(255,255,255,0.7); }
+
+    .for-you-body {
+      margin-top: 48px;
+      display: grid;
+      gap: 48px;
+    }
+
+    .for-you-block p {
+      font-size: 1.05rem;
+      line-height: 2;
+    }
+
+    .for-you-turn {
+      border-top: 1px solid rgba(255,255,255,0.15);
+      padding-top: 48px;
+    }
+
+    .for-you-turn p {
+      font-size: 1.15rem;
+      color: var(--white);
+      font-weight: 500;
+      line-height: 2;
+    }
+
+    .for-you-turn strong {
+      color: #7EC99A;
+    }
+
+    /* ===== SECTION LABEL ===== */
+    .section-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      color: var(--text-light);
+      text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+
+    /* ===== TRANSFORMATION ===== */
+    #transformation { border-bottom: 1px solid var(--border); }
+
+    .cases { margin-top: 64px; display: grid; gap: 64px; }
+
+    .case {
+      padding: 40px;
+      background: var(--white);
+      border-radius: 8px;
+      border: 1px solid var(--border);
+    }
+
+    .case-company {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      color: var(--accent);
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    .case-domain {
+      font-size: 0.8rem;
+      color: var(--text-light);
+      margin-bottom: 28px;
+    }
+
+    .case-before-after {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-bottom: 28px;
+    }
+
+    @media (max-width: 600px) {
+      .case-before-after { grid-template-columns: 1fr; }
+    }
+
+    .case-ba-block {}
+
+    .case-ba-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-light);
+      margin-bottom: 10px;
+    }
+
+    .case-ba-label.after { color: var(--accent); }
+
+    .case-ba-block p {
+      font-size: 0.92rem;
+      line-height: 1.8;
+    }
+
+    .case-now {
+      font-size: 0.8rem;
+      color: var(--text-light);
+      border-top: 1px solid var(--border);
+      padding-top: 20px;
+    }
+
+    /* ===== WHY ===== */
+    #why { border-bottom: 1px solid var(--border); }
+
+    .why-body { margin-top: 48px; }
+
+    .why-body p {
+      font-size: 1.05rem;
+      line-height: 2;
+      margin-bottom: 24px;
+    }
+
+    .why-highlight {
+      margin: 48px 0;
+      padding: 36px 40px;
+      border-left: 3px solid var(--accent);
+      background: var(--white);
+    }
+
+    .why-highlight p {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--text);
+      line-height: 1.8;
+      margin: 0;
+    }
+
+    .why-sub {
+      margin-top: 48px;
+      padding-top: 48px;
+      border-top: 1px solid var(--border);
+    }
+
+    .why-sub p {
+      font-size: 1rem;
+      line-height: 2;
+      margin-bottom: 0;
+    }
+
+    /* ===== SOVREN ===== */
+    #sovren { border-bottom: 1px solid var(--border); }
+
+    .sovren-intro { margin-top: 48px; }
+    .sovren-intro p { font-size: 1.05rem; line-height: 2; margin-bottom: 16px; }
+
+    .bootcamp-cards {
+      margin-top: 64px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+
+    @media (max-width: 640px) {
+      .bootcamp-cards { grid-template-columns: 1fr; }
+    }
+
+    .bootcamp-card {
+      padding: 36px;
+      border: 1.5px solid var(--border);
+      border-radius: 8px;
+      background: var(--white);
+    }
+
+    .bootcamp-card.featured {
+      border-color: var(--accent);
+    }
+
+    .bootcamp-tag {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 16px;
+    }
+
+    .bootcamp-card h3 { margin-bottom: 8px; }
+
+    .bootcamp-price {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--text);
+      margin: 16px 0;
+    }
+
+    .bootcamp-items {
+      list-style: none;
+      margin-top: 20px;
+      display: grid;
+      gap: 10px;
+    }
+
+    .bootcamp-items li {
+      font-size: 0.88rem;
+      color: var(--text-mid);
+      padding-left: 16px;
+      position: relative;
+      line-height: 1.6;
+    }
+
+    .bootcamp-items li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+    }
+
+    .bootcamp-timing {
+      margin-top: 20px;
+      font-size: 0.78rem;
+      color: var(--text-light);
+      border-top: 1px solid var(--border);
+      padding-top: 16px;
+    }
+
+    /* ===== FOUNDER ===== */
+    #founder { border-bottom: 1px solid var(--border); }
+
+    .founder-body { margin-top: 48px; }
+
+    .founder-opening {
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: var(--text);
+      line-height: 1.9;
+      margin-bottom: 36px;
+    }
+
+    .founder-facts {
+      display: grid;
+      gap: 16px;
+      margin: 36px 0;
+    }
+
+    .founder-fact {
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      gap: 16px;
+      padding: 16px 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .founder-fact-label {
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      color: var(--text-light);
+    }
+
+    .founder-fact-value {
+      font-size: 0.92rem;
+      color: var(--text-mid);
+      line-height: 1.7;
+    }
+
+    .founder-closing {
+      margin-top: 36px;
+      padding: 28px 32px;
+      background: var(--bg-dark);
+      border-radius: 6px;
+      color: rgba(255,255,255,0.85);
+      font-size: 0.95rem;
+      line-height: 1.9;
+    }
+
+    /* ===== OFFER ===== */
+    #offer { border-bottom: 1px solid var(--border); }
+
+    .offer-table {
+      margin-top: 48px;
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .offer-table th {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-light);
+      text-align: left;
+      padding: 0 16px 16px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .offer-table td {
+      padding: 20px 16px 20px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.92rem;
+      color: var(--text-mid);
+      vertical-align: top;
+      line-height: 1.7;
+    }
+
+    .offer-table td:first-child {
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .status-active {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 99px;
+      background: #E8F4EC;
+      color: var(--accent);
+    }
+
+    .status-soon {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 99px;
+      background: #F0EFE8;
+      color: var(--text-light);
+    }
+
+    /* ===== CONTACT ===== */
+    #contact { background: var(--bg-dark); color: var(--white); }
+
+    #contact .section-label { color: rgba(255,255,255,0.35); }
+    #contact h2 { color: var(--white); }
+    #contact p { color: rgba(255,255,255,0.65); }
+
+    .contact-body { margin-top: 48px; }
+
+    .contact-body p {
+      font-size: 1rem;
+      margin-bottom: 40px;
+      line-height: 2;
+    }
+
+    .contact-ctas {
+      display: grid;
+      gap: 16px;
+    }
+
+    .contact-cta-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 24px 28px;
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 6px;
+      text-decoration: none;
+      transition: background 0.2s, border-color 0.2s;
+    }
+
+    .contact-cta-item:hover {
+      background: rgba(255,255,255,0.05);
+      border-color: rgba(255,255,255,0.25);
+    }
+
+    .contact-cta-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--white);
+    }
+
+    .contact-cta-sub {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.45);
+      margin-top: 4px;
+    }
+
+    .contact-cta-arrow {
+      font-size: 1.2rem;
+      color: rgba(255,255,255,0.4);
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: var(--bg-dark);
+      border-top: 1px solid rgba(255,255,255,0.06);
+      padding: 40px 0;
+    }
+
+    .footer-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .footer-copy {
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.3);
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 24px;
+    }
+
+    .footer-links a {
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.35);
+      text-decoration: none;
+    }
+
+    .footer-links a:hover { color: rgba(255,255,255,0.65); }
+
+    /* ===== DIVIDER ===== */
+    .divider-line {
+      width: 40px;
+      height: 2px;
+      background: var(--accent);
+      margin: 40px 0;
+    }
+
+  </style>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-NV8MF29S9L"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-NV8MF29S9L');
+  </script>
+</head>
+
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">意思決定株式会社</a>
+      <a href="#contact" class="nav-cta">無料相談を申し込む</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="container">
+      <p class="hero-label">SOVREN Framework</p>
+      <h1 class="hero-title">
+        あなたの現場が、<br>あなたの最強の<br>資産になる。
+      </h1>
+      <p class="hero-body">
+        20年の経験。毎日の判断。積み上げてきた信頼。<br>
+        それをAIが使える形にする。<br>
+        それだけで、あなたの事業は変わる。<br><br>
+        SOVRENは、現場で働く人のために作った実装フレームワークだ。
+      </p>
+      <div class="hero-ctas">
+        <a href="#contact" class="btn-primary">まず話を聞く（無料）</a>
+        <a href="https://sovren-framework.netlify.app" target="_blank" class="btn-secondary">SOVRENを読む</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOR YOU -->
+  <section id="for-you">
+    <div class="container">
+      <p class="section-label">For You</p>
+      <h2>あなたのことです。</h2>
+
+      <div class="for-you-body">
+        <div class="for-you-block">
+          <p>
+            毎日、現場に立っている。<br>
+            良いものを作っている。お客さんのことを考えている。<br>
+            でも、やりたいことが全部はできていない。
+          </p>
+          <br>
+          <p>
+            自分がいないと回らない。<br>
+            新しいことを始める余力がない。<br>
+            AIって聞くけど、自分には関係ない話に聞こえる。
+          </p>
+        </div>
+
+        <div class="for-you-turn">
+          <p>
+            その感覚は、正しくない。<br><br>
+            <strong>あなたこそ、AIで一番変われる人だ。</strong><br><br>
+            大企業のデータより、あなたの現場の20年の方が、価値がある。<br>
+            その理由を、これから説明する。
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRANSFORMATION -->
+  <section id="transformation">
+    <div class="container">
+      <p class="section-label">Transformation</p>
+      <h2>現場の人に、<br>何が起きているか。</h2>
+      <p style="margin-top:24px;">言葉より、現場を見てほしい。</p>
+
+      <div class="cases">
+
+        <div class="case">
+          <p class="case-company">摂取資源株式会社</p>
+          <p class="case-domain">食・飲食業 / AX</p>
+          <div class="case-before-after">
+            <div class="case-ba-block">
+              <p class="case-ba-label">Before</p>
+              <p>人を雇って生産・販売するモデルで動いていた。案件が増えるほど、人も増やさなければならなかった。</p>
+            </div>
+            <div class="case-ba-block">
+              <p class="case-ba-label after">After</p>
+              <p>一人社長＋AIで、次々と新規ビジネスを展開するコンパウンド戦略へ転換。小さな箱で小さく始め、手応えが出たら拡張する設計を、一人で複数同時に動かせるようになった。</p>
+            </div>
+          </div>
+          <p class="case-now">現在進行中（2026年6月〜）/ 詳細は承諾のもとで順次公開</p>
+        </div>
+
+        <div class="case">
+          <p class="case-company">一人一軒株式会社</p>
+          <p class="case-domain">不動産・空き家再生</p>
+          <div class="case-before-after">
+            <div class="case-ba-block">
+              <p class="case-ba-label">Before</p>
+              <p>不動産業務は属人的で、管理コストが高く、小規模物件の採算が合いにくかった。次の事業に手が届かなかった。</p>
+            </div>
+            <div class="case-ba-block">
+              <p class="case-ba-label after">After</p>
+              <p>メールの自動化、情報の集積、効率的な提案・書類運用が一気に進み、これまで手が届かなかった新規事業への着手が始まっている。同じ人数で、動かせる領域が広がった。</p>
+            </div>
+          </div>
+          <p class="case-now">現在進行中（2026年6月〜）/ 詳細は承諾のもとで順次公開</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY -->
+  <section id="why">
+    <div class="container">
+      <p class="section-label">Why Ontology</p>
+      <h2>なぜ、あなたの現場知が<br>最強の素材なのか。</h2>
+
+      <div class="why-body">
+        <p>
+          AIは、誰にでも一般論を返す。<br>
+          どれだけ賢いAIでも、あなたの現場で積み上がってきたものは、作れない。
+        </p>
+
+        <p>
+          お客さんの顔と好みを全部覚えている記憶。<br>
+          この土地でこの作物を育てるときの判断基準。<br>
+          長年の取引先との、言葉にならない信頼の温度感。
+        </p>
+
+        <p>これはAIが生成できない。あなたにしか持てない。</p>
+
+        <div class="why-highlight">
+          <p>
+            Ontologyとは、この「あなたにしか持てない文脈」を、<br>
+            AIが読める形で構造化することだ。<br><br>
+            Ontologyを持ったあなたのAIは、一般論を返さない。<br>
+            あなたの20年の文脈の中で、次の打ち手を考える。
+          </p>
+        </div>
+
+        <div class="why-sub">
+          <p>
+            大企業が有利だった理由は、管理コストを払える規模があったからだ。<br>
+            顧客管理、プロジェクト管理、発信、採用——すべてに人員とシステムが必要だった。<br><br>
+            AIによって、その管理コストは激減した。<br>
+            現場を持っている人が、今、最も強い立場にいる。
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOVREN -->
+  <section id="sovren">
+    <div class="container">
+      <p class="section-label">SOVREN Framework</p>
+      <h2>SOVRENは、<br>その実装ツールだ。</h2>
+
+      <div class="sovren-intro">
+        <p>
+          SOVREN Frameworkは、意思決定株式会社が作り、無料で公開している実装フレームワークだ。
+        </p>
+        <p>
+          あなたの経験・判断基準・人間関係・行動履歴を構造化し、AIに渡せる状態にする。<br>
+          9つのスキルと3つのマイルストーンで構成されている。
+        </p>
+        <p>
+          フレームワーク自体はWebで読める。<br>
+          実装をサポートするのが、SOVREN Bootcampだ。
+        </p>
+        <br>
+        <a href="https://sovren-framework.netlify.app" target="_blank" class="btn-secondary">SOVREN Frameworkを読む →</a>
+      </div>
+
+      <div class="divider-line" style="margin-top:64px;"></div>
+      <h3 style="margin-bottom:8px;">SOVREN Bootcamp</h3>
+      <p style="font-size:0.92rem;">あなたの現場に入り、終わったときに「動くシステム」を残す。スライドで終わらない。</p>
+
+      <div class="bootcamp-cards">
+
+        <div class="bootcamp-card featured">
+          <p class="bootcamp-tag">1日 Bootcamp</p>
+          <h3>業務棚卸し＋<br>Ontology実装</h3>
+          <p class="bootcamp-price">330,000円〜</p>
+          <ul class="bootcamp-items">
+            <li>業務の棚卸し（自分・AI・外注の3区分）</li>
+            <li>Ontology雛形の実装</li>
+            <li>業務棚卸し表・Ontology-workspace・30日アクションログ</li>
+          </ul>
+          <p class="bootcamp-timing">2026年12月〜（モニター先選定中）</p>
+        </div>
+
+        <div class="bootcamp-card">
+          <p class="bootcamp-tag">3日 Bootcamp</p>
+          <h3>組織全体の<br>Ontology実装</h3>
+          <p class="bootcamp-price">660,000円〜</p>
+          <ul class="bootcamp-items">
+            <li>Day 1: 業務を「自分・AI・外注」で再設計</li>
+            <li>Day 2: あなたの現場知をAIが使える形で実装</li>
+            <li>Day 3: 個人OntologyをチームのKnowledge baseへ接続</li>
+          </ul>
+          <p class="bootcamp-timing">2027年春〜</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOUNDER -->
+  <section id="founder">
+    <div class="container">
+      <p class="section-label">Founder</p>
+      <h2>伊藤雄吉が、<br>このツールを作った理由。</h2>
+
+      <div class="founder-body">
+        <p class="founder-opening">
+          全国の現場で頑張っている人たちが、AIの変革に無防備なまま立っている。<br>
+          大企業向けのコンサルは来ない。誰も手を差し伸べていない。<br><br>
+          それが、SOVRENを作り続けている理由だ。
+        </p>
+
+        <div class="founder-facts">
+          <div class="founder-fact">
+            <span class="founder-fact-label">コンサルティング</span>
+            <span class="founder-fact-value">複数の中小企業の事業設計・組織設計に関与。単価50,000円/時間。</span>
+          </div>
+          <div class="founder-fact">
+            <span class="founder-fact-label">投資</span>
+            <span class="founder-fact-value">飲食・不動産・教育・テクノロジー領域にエンジェル出資・LP出資。出資先：摂取資源株式会社、一人一軒株式会社、株式会社Liquitous 他。</span>
+          </div>
+          <div class="founder-fact">
+            <span class="founder-fact-label">教育</span>
+            <span class="founder-fact-value">AIPスクール（SeedHouse連携）にてAI×教育の実装を設計。小学生から社会人まで。</span>
+          </div>
+        </div>
+
+        <div class="founder-closing">
+          自分がやってきたことを、再現可能な形にした。それがSOVRENだ。<br>
+          売り込まない。ただ、使える状態にして渡す。
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OFFER -->
+  <section id="offer">
+    <div class="container">
+      <p class="section-label">Offer</p>
+      <h2>まず、話を聞いてほしい。</h2>
+      <p style="margin-top:24px;">今すぐBootcampを受ける必要はない。自分の事業にOntologyが使えるか、一緒に確認することから始める。</p>
+
+      <table class="offer-table">
+        <thead>
+          <tr>
+            <th>メニュー</th>
+            <th>内容</th>
+            <th>状態</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>無料相談（60分）</td>
+            <td>自分の事業への適用可能性を一緒に考える</td>
+            <td><span class="status-active">随時受付</span></td>
+          </tr>
+          <tr>
+            <td>Ontology経営勉強会</td>
+            <td>実践者と共に自社Ontologyの設計を考える<br><span style="font-size:0.82rem;color:#8A8A82;">8,000円 / 2h</span></td>
+            <td><span class="status-soon">2026年11月〜</span></td>
+          </tr>
+          <tr>
+            <td>1日 Bootcamp</td>
+            <td>業務棚卸し＋Ontology実装<br><span style="font-size:0.82rem;color:#8A8A82;">330,000円〜</span></td>
+            <td><span class="status-soon">2026年12月〜</span></td>
+          </tr>
+          <tr>
+            <td>3日 Bootcamp</td>
+            <td>組織全体のOntology実装と事業再設計<br><span style="font-size:0.82rem;color:#8A8A82;">660,000円〜</span></td>
+            <td><span class="status-soon">2027年春〜</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="container">
+      <p class="section-label">Contact</p>
+      <h2>あなたの現場に、<br>Ontologyを実装したい方へ。</h2>
+
+      <div class="contact-body">
+        <p>
+          法人導入・Bootcamp・勉強会・取材・協業については以下よりお問い合わせください。<br>
+          現在は紹介・招待優先で進めています。
+        </p>
+
+        <div class="contact-ctas">
+          <a href="mailto:yukichi@intakingresources.com?subject=無料相談の申し込み" class="contact-cta-item">
+            <div>
+              <p class="contact-cta-title">無料相談を申し込む</p>
+              <p class="contact-cta-sub">自分の事業への適用可能性を一緒に確認する（60分）</p>
+            </div>
+            <span class="contact-cta-arrow">→</span>
+          </a>
+          <a href="mailto:yukichi@intakingresources.com?subject=法人導入の相談" class="contact-cta-item">
+            <div>
+              <p class="contact-cta-title">法人導入を相談する</p>
+              <p class="contact-cta-sub">Bootcamp・チーム導入について</p>
+            </div>
+            <span class="contact-cta-arrow">→</span>
+          </a>
+          <a href="mailto:yukichi@intakingresources.com?subject=取材・協業の相談" class="contact-cta-item">
+            <div>
+              <p class="contact-cta-title">取材・協業を相談する</p>
+              <p class="contact-cta-sub">メディア・パートナーシップ・協業について</p>
+            </div>
+            <span class="contact-cta-arrow">→</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <p class="footer-copy">© 2026 意思決定株式会社</p>
+      <div class="footer-links">
+        <a href="https://sovren-framework.netlify.app" target="_blank">SOVREN Framework</a>
+        <a href="mailto:yukichi@intakingresources.com">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

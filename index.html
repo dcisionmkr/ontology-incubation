@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ontology incubation — AIを自分の言葉で使いこなす | 経営セミナー（横浜）</title>
+  <meta name="description" content="現場を持つ事業者・経営者のためのAI活用セミナー。技術不要。あなたの20年の経験・判断・現場知をAIが使える形に構造化する。Ontology経営勉強会¥8,800（税込）/ 2h、随時受付中。主催：伊藤雄吉（伊藤雄吉事務所）。">
+  <meta name="keywords" content="Ontology,AI経営,経営セミナー,中小企業,AI活用,SOVREN Framework,パーソナルオントロジー,伊藤雄吉,伊藤雄吉事務所,横浜">
+  <meta property="og:title" content="Ontology incubation — AIを自分の言葉で使いこなす">
+  <meta property="og:description" content="現場を持つ事業者のためのAI活用セミナー。あなたの20年の経験をAIが使える資産に変える。Ontology経営勉強会¥8,800（税込）/ 2h、随時受付中。横浜・主催：伊藤雄吉。">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="ja_JP">
+  <meta property="og:url" content="https://ontology-incubation.netlify.app/">
+  <meta property="og:site_name" content="Ontology incubation">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Ontology incubation — AIを自分の言葉で使いこなす">
+  <meta name="twitter:description" content="現場を持つ事業者のためのAI活用セミナー。あなたの現場知をAIが使える資産に。¥8,800（税込）/ 2h。随時受付中。">
+  <meta name="twitter:site" content="@kichisinger">
+  <meta name="twitter:creator" content="@kichisinger">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="伊藤雄吉 / 伊藤雄吉事務所">
+  <meta name="geo.region" content="JP-14">
+  <meta name="geo.placename" content="横浜市">
+  <link rel="canonical" href="https://ontology-incubation.netlify.app/">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://ontology-incubation.netlify.app/#organization",
+        "name": "伊藤雄吉事務所",
+        "alternateName": "Ontology incubation",
+        "url": "https://ontology-incubation.netlify.app/",
+        "description": "AI時代に個人と小さな組織が「自分の判断で動く力」を取り戻すための、教育・実装・発信の会社。SOVREN Frameworkを無料公開し、現場を持つ中小事業者のAI実装を支援する。",
+        "founder": {
+          "@type": "Person",
+          "@id": "https://ontology-incubation.netlify.app/#founder",
+          "name": "伊藤雄吉",
+          "email": "kichisinger@gmail.com",
+          "sameAs": ["https://x.com/kichisinger", "https://instagram.com/kichisinger", "https://kichisinger.netlify.app"],
+          "jobTitle": "代表",
+          "description": "2004年学生ベンチャー創業以来20年以上、教育・事業設計・投資の現場で活動。SOVREN Frameworkの開発者。2025年に株式譲渡を経て、現在は横浜を拠点に中小事業者のAI支援に取り組む。"
+        },
+        "areaServed": [
+          {"@type": "City", "name": "横浜市"},
+          {"@type": "Country", "name": "日本"}
+        ]
+      },
+      {
+        "@type": "EducationalOrganization",
+        "@id": "https://ontology-incubation.netlify.app/#school",
+        "name": "Ontology incubation",
+        "description": "現場を持つ経営者・事業者のためのAI活用実践セミナー。飲食・不動産・製造・農業・サービス業など実業を持つ方を対象に、個人の経験・判断・現場知をOntologyとして構造化し、AIを意思決定インフラとして活用する方法を実践的に習得する。",
+        "url": "https://ontology-incubation.netlify.app/",
+        "parentOrganization": {"@id": "https://ontology-incubation.netlify.app/#organization"}
+      },
+      {
+        "@type": "Course",
+        "@id": "https://ontology-incubation.netlify.app/#course",
+        "name": "Ontology経営勉強会",
+        "description": "現場を持つ経営者・事業者が、自身の経験・判断・現場知をAIが使える形で構造化（Ontology化）する実践型セミナー。技術知識不要。音声入力を活用し、参加者全員が自分のデバイスで実践する。",
+        "url": "https://ontology-incubation.netlify.app/",
+        "provider": {"@id": "https://ontology-incubation.netlify.app/#organization"},
+        "instructor": {"@id": "https://ontology-incubation.netlify.app/#founder"},
+        "inLanguage": "ja",
+        "courseMode": ["Onsite"],
+        "educationalLevel": "初級〜中級",
+        "teaches": [
+          "個人Ontologyの構築",
+          "AIを使った経営意思決定",
+          "SOVREN Frameworkの実装",
+          "業務の棚卸しと再設計",
+          "AIエージェントの活用"
+        ],
+        "hasCourseInstance": {
+          "@type": "CourseInstance",
+          "courseMode": "Onsite",
+          "duration": "PT2H",
+          "location": {
+            "@type": "Place",
+            "name": "横浜・ブルーコンパス",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "横浜市",
+              "addressRegion": "神奈川県",
+              "addressCountry": "JP"
+            }
+          }
+        },
+        "offers": {
+          "@type": "Offer",
+          "price": "8800",
+          "priceCurrency": "JPY",
+          "description": "¥8,800（税込）/ 2時間",
+          "availability": "https://schema.org/InStock",
+          "validFrom": "2026-06-01"
+        }
+      },
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://sovereign-framework.netlify.app/#software",
+        "name": "SOVREN Framework",
+        "description": "伊藤雄吉事務所が開発・無料公開している実装フレームワーク。9つのスキル（S1〜S9）と3つのマイルストーンで構成。個人の経験・判断基準・人間関係・行動履歴を構造化し、AIが使える状態にする。",
+        "url": "https://sovereign-framework.netlify.app/",
+        "applicationCategory": "BusinessApplication",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "JPY"
+        },
+        "author": {"@id": "https://ontology-incubation.netlify.app/#founder"}
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://ontology-incubation.netlify.app/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "無料相談では何をするんですか？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "自分の事業にOntologyが使えるか、一緒に確認することから始めます。60分で事業の現状をお聞きし、適用可能性・優先すべきスキル・進め方を整理します。まず「使えるか」を判断するための時間です。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "どのような業種・職種の方が対象ですか？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "飲食・不動産・教育・小売・製造・農業・サービス業など、実業をやっている事業者の方が対象です。AIやインターネットサービスのみを事業の主体とする業態の方、エンジニア向けの技術的な内容をお探しの方には向いていません。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "SOVREN Frameworkとは何ですか？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "SOVREN Frameworkは、伊藤雄吉が20年以上の事業設計・教育の実践をもとに開発した実装フレームワークです。AIツールの使い方を学ぶのではなく、自分の事業の意思決定をAIで強化するための9つのスキル（S1〜S9）を体系化しています。すべての内容を無料で公開しています。https://sovereign-framework.netlify.app/ からご覧いただけます。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "相談・申込はどうすればいいですか？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "X（Twitter）またはInstagramのDMよりご連絡ください。@kichisinger にDMをお送りください。無料相談・勉強会・法人導入・取材・協業、いずれもお気軽にどうぞ。"
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-NV8MF29S9L"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-NV8MF29S9L');
+  </script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --black: #111111;
+      --white: #ffffff;
+      --gray: #666666;
+      --light: #f5f5f5;
+      --border: #dddddd;
+    }
+
+    body {
+      font-family: 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Noto Sans JP', sans-serif;
+      color: var(--black);
+      background: var(--white);
+      line-height: 1.65;
+      font-size: 15px;
+    }
+
+    a { color: var(--black); }
+
+    /* ナビ */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      padding: 0 2rem;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      z-index: 100;
+    }
+    nav .logo {
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-decoration: none;
+    }
+    nav .nav-links {
+      display: flex;
+      gap: 1.15rem;
+      list-style: none;
+    }
+    nav .nav-links a {
+      font-size: 0.78rem;
+      text-decoration: none;
+      color: var(--gray);
+      letter-spacing: 0.05em;
+    }
+    nav .nav-links a:hover { color: var(--black); }
+
+    /* セクション共通 */
+    section {
+      padding: 3rem 2rem;
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    .label {
+      font-size: 0.68rem;
+      letter-spacing: 0.15em;
+      color: var(--gray);
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+    }
+
+    h1 {
+      font-size: clamp(1.7rem, 4vw, 2.6rem);
+      font-weight: 700;
+      line-height: 1.3;
+      letter-spacing: -0.02em;
+      margin-bottom: 1rem;
+    }
+
+    h2 {
+      font-size: 1.35rem;
+      font-weight: 700;
+      line-height: 1.4;
+      margin-bottom: 0.75rem;
+      letter-spacing: -0.01em;
+    }
+
+    h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 0.4rem;
+    }
+
+    p {
+      color: #333;
+      margin-bottom: 0.75rem;
+      font-size: 0.95rem;
+    }
+
+    .lead {
+      font-size: 1rem;
+      line-height: 1.75;
+      color: #222;
+    }
+
+    /* ヒーロー */
+    #hero {
+      padding-top: 6rem;
+      padding-bottom: 3rem;
+      border-bottom: 1px solid var(--border);
+    }
+    #hero .sub {
+      font-size: 1rem;
+      color: var(--gray);
+      margin-bottom: 1rem;
+    }
+    #hero .cta-wrap {
+      margin-top: 1.25rem;
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+    .btn {
+      display: inline-block;
+      padding: 0.55rem 1.25rem;
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-decoration: none;
+      letter-spacing: 0.05em;
+      border: 2px solid var(--black);
+      transition: all 0.2s;
+    }
+    .btn-fill {
+      background: var(--black);
+      color: var(--white);
+    }
+    .btn-fill:hover { background: #333; }
+    .btn-outline { color: var(--black); }
+    .btn-outline:hover { background: var(--black); color: var(--white); }
+
+    /* 問い */
+    #question {
+      background: var(--light);
+      max-width: 100%;
+      padding: 2.5rem 2rem;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    #question .inner {
+      max-width: 760px;
+      margin: 0 auto;
+    }
+    #question blockquote {
+      font-size: 1.05rem;
+      font-weight: 700;
+      line-height: 1.6;
+      border-left: 3px solid var(--black);
+      padding-left: 1rem;
+      margin-bottom: 0.75rem;
+    }
+
+    /* 区切り線 */
+    hr {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 1.25rem 0;
+    }
+
+    /* テーブル */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 1rem;
+      font-size: 0.88rem;
+    }
+    th, td {
+      text-align: left;
+      padding: 0.45rem 0.75rem;
+      border-bottom: 1px solid var(--border);
+    }
+    th {
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      color: var(--gray);
+      font-weight: 400;
+    }
+    tr:last-child td { border-bottom: none; }
+
+    /* カード */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .card {
+      border: 1px solid var(--border);
+      padding: 1.1rem;
+    }
+    .card .num {
+      font-size: 0.68rem;
+      letter-spacing: 0.15em;
+      color: var(--gray);
+      margin-bottom: 0.4rem;
+    }
+
+    /* SOVRENセクション（黒背景フルワイド） */
+    #sovereign {
+      background: var(--black);
+      color: var(--white);
+      max-width: 100%;
+      padding: 4rem 2rem;
+      border-top: 1px solid #333;
+    }
+    #sovereign .inner {
+      max-width: 760px;
+      margin: 0 auto;
+    }
+    #sovereign .label { color: #888; }
+    #sovereign h2 { color: var(--white); font-size: 1.5rem; margin-bottom: 1rem; }
+    #sovereign h3 { color: var(--white); margin-top: 2rem; margin-bottom: 0.5rem; }
+    #sovereign p { color: #ccc; }
+    #sovereign a { color: #aaa; }
+    #sovereign table { color: #ccc; }
+    #sovereign th { color: #666; border-bottom-color: #333; }
+    #sovereign td { border-bottom-color: #333; }
+    #sovereign tr:last-child td { border-bottom: none; }
+    #sovereign hr { border-color: #333; }
+
+    /* SOVRENプレビューカード */
+    .sovren-preview {
+      display: block;
+      text-decoration: none;
+      margin: 2rem 0;
+      border: 1px solid #444;
+      overflow: hidden;
+    }
+    .sovren-preview-header {
+      background: #1e1b4b;
+      padding: 1rem 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .sovren-preview-body {
+      background: #1a1a2e;
+      padding: 2rem 1.5rem;
+    }
+    .sovren-preview-body p { color: #ccc; }
+    .sovren-skills-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem;
+      margin-top: 1rem;
+    }
+    .sovren-skill-card {
+      background: #111;
+      border: 1px solid #333;
+      padding: 1rem;
+      border-radius: 4px;
+    }
+
+    /* コンタクト */
+    #contact {
+      background: var(--black);
+      color: var(--white);
+      max-width: 100%;
+      padding: 3rem 2rem;
+      text-align: center;
+    }
+    #contact .inner { max-width: 560px; margin: 0 auto; }
+    #contact h2 { color: var(--white); margin-bottom: 0.5rem; }
+    #contact p { color: #aaa; margin-bottom: 1.25rem; }
+    #contact .btn-fill {
+      background: var(--white);
+      color: var(--black);
+      border-color: var(--white);
+    }
+    #contact .btn-fill:hover { background: #eee; }
+
+    /* 法務表示 */
+    #legal {
+      background: var(--light);
+      max-width: 100%;
+      border-top: 1px solid var(--border);
+    }
+    #legal .inner {
+      max-width: 760px;
+      margin: 0 auto;
+    }
+    #legal table {
+      background: var(--white);
+      border: 1px solid var(--border);
+    }
+    #legal th {
+      width: 32%;
+      background: #fafafa;
+      color: #555;
+      font-weight: 700;
+      letter-spacing: 0;
+      vertical-align: top;
+    }
+    #legal td {
+      color: #333;
+      vertical-align: top;
+    }
+    #legal .note {
+      font-size: 0.82rem;
+      color: #666;
+      margin-top: 0.75rem;
+    }
+    #privacy {
+      margin-top: 2rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border);
+    }
+
+    /* フッター */
+    footer {
+      padding: 1.25rem 2rem;
+      text-align: center;
+      font-size: 0.78rem;
+      color: var(--gray);
+      border-top: 1px solid var(--border);
+    }
+
+    /* 写真グリッド */
+    .photo-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.5rem;
+      margin-top: 1rem;
+    }
+    .photo-grid img {
+      width: 100%;
+      aspect-ratio: 4/3;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* スマホ */
+    @media (max-width: 600px) {
+      nav .nav-links { display: none; }
+      h1 { font-size: 1.8rem; }
+      h2 { font-size: 1.3rem; }
+      #hero .cta-wrap { flex-direction: column; }
+      .photo-grid { grid-template-columns: 1fr; }
+      .sovren-skills-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ナビ -->
+<nav aria-label="メインナビゲーション">
+  <a class="logo" href="#">ONTOLOGY INCUBATION</a>
+  <ul class="nav-links">
+    <li><a href="#about">現場の人へ</a></li>
+    <li><a href="#detail">サービス</a></li>
+    <li><a href="#sovereign">SOVREN</a></li>
+    <li><a href="#contact">相談する</a></li>
+  </ul>
+</nav>
+
+<!-- ヒーロー -->
+<section id="hero" aria-labelledby="hero-heading">
+  <p class="sub">伊藤雄吉事務所 主催</p>
+  <h1 id="hero-heading">AIを、自分の<br>言葉で使いこなす。</h1>
+  <p class="lead">Ontology incubationは、PCが苦手な経営者・事業者・会社員のための<br>AIを活用した経営セミナーです。<br>技術は不要です。あなたの事業の言葉で始めます。</p>
+  <div class="cta-wrap">
+    <a href="#contact" class="btn btn-fill">まず話を聞く（無料相談）</a>
+    <a href="https://sovereign-framework.netlify.app/" target="_blank" rel="noopener" class="btn btn-outline">教科書を見る</a>
+  </div>
+  <img src="img/Image_20260604_190728_657.jpeg" alt="Ontology incubation 2026年6月4日レクチャーの様子" style="width:100%;margin-top:1.5rem;display:block;" loading="lazy">
+</section>
+
+<!-- 問い（Why Ontology） -->
+<div id="question" role="complementary" aria-label="Ontologyとは">
+  <div class="inner">
+    <p class="label">Why Ontology</p>
+    <blockquote>あなたの現場で積み上がってきた20年を、<br>AIはまだ、知りません。</blockquote>
+    <p>常連のお客様の顔と好みの記憶。この土地でこの作物を育てるときの判断基準。長年の取引先との、言葉にならない信頼の温度感——これはAIが生成できるものではありません。あなたにしか持てないものです。</p>
+    <p>Ontologyとは、この「あなたにしか持てない文脈」をAIが読める形で構造化することです。Ontologyを持ったあなたのAIは、一般論を返しません。あなたの20年の文脈の中で、次の打ち手を考えてくれます。</p>
+    <p><strong>大企業が有利だった時代は変わりました。生産コストが増大し、管理コストが激減した今、現場を持っている方が、最も強い立場にあります。</strong></p>
+  </div>
+</div>
+
+<!-- このセミナーについて（For You） -->
+<section id="about" aria-labelledby="about-heading">
+  <p class="label">About</p>
+  <h2 id="about-heading">Ontology incubationとは</h2>
+  <p>実業をベースとした事業者・会社員を対象に、Ontologyの作り方・使い方を実践的に習得するセミナーです。AIが性能を最大限に発揮しながら、あなたの会社を次々と自動化させてゆく——そんな新しいビジネスの形を、一緒に設計していきます。</p>
+  <p>音声入力などを駆使し、PCが苦手でも自分の手で動かしながら体得できます。（とても簡単です）</p>
+
+  <hr>
+
+  <h3>あなたのことです。</h3>
+  <p>毎日、現場に立っている。良いものを作っている。お客さんのことを考えている。でも、やりたいことが全部はできていない。</p>
+  <p>自分がいないと回らない。新しいことを始める余力がない。「AI活用」と言われても、自分には関係ない話に聞こえる。</p>
+  <p><strong>その感覚は正しくありません。あなたこそ、AIで一番変われる方です。</strong>大企業のデータより、あなたの現場の20年の方が、価値があります。その理由を、これから説明します。</p>
+
+  <hr>
+
+  <h3>このセミナーが向いている方</h3>
+  <div class="cards" role="list">
+    <article class="card" role="listitem">
+      <p class="num">01</p>
+      <h3>生産者・農家・工務店</h3>
+      <p>現場の技術・判断・経験を持ち、毎日動いている方たち。AIと一番相性がよいのは、こうした方々です。</p>
+    </article>
+    <article class="card" role="listitem">
+      <p class="num">02</p>
+      <h3>飲食店・サロン・小売</h3>
+      <p>お客様のことを誰より知っている。その文脈をAIに渡せば、一人で複数の事業を動かせるようになります。</p>
+    </article>
+    <article class="card" role="listitem">
+      <p class="num">03</p>
+      <h3>小・中規模の製造業・サービス業</h3>
+      <p>管理コストが重く、人を増やしにくい。AIで構造を変えると、同じ人数で動かせる範囲が広がります。</p>
+    </article>
+    <article class="card" role="listitem">
+      <p class="num">04</p>
+      <h3>チームで参加したい場合</h3>
+      <p>人数が多い場合は出張・派遣対応。全員が自分のデバイスで実践するスタイルを取ります。</p>
+    </article>
+  </div>
+
+  <hr>
+
+  <h3>このセミナーが向いていない方</h3>
+  <p>AIやインターネットサービスのみを事業の主体とする業態の方は対象としていません。また、技術的な深掘りをお求めの方や、エンジニア向けの内容をお探しの方にも向いていません。</p>
+</section>
+
+<!-- PCが苦手でも -->
+<section id="for-who" style="background:var(--light); max-width:100%; padding:3rem 2rem; border-top:1px solid var(--border); border-bottom:1px solid var(--border);" aria-labelledby="for-who-heading">
+  <div style="max-width:760px; margin:0 auto;">
+    <p class="label">For Who</p>
+    <h2 id="for-who-heading">PCが苦手でも、<br>大丈夫です。</h2>
+    <p>音声入力などを活用しながら、自分の手で動かして体得していただきます。代表者1人が操作して他の人が見ている、という形はとりません。参加者全員が自分のデバイスで実践します。</p>
+    <p>チーム参加の場合、希望があればメンバー間のAIエージェントが連携できる社内ディレクトリ構造の設計もあわせて提案します。個々のOntologyが会社全体の意思決定インフラとして機能する状態を、一緒に設計します。</p>
+  </div>
+</section>
+
+<!-- サービスメニュー -->
+<div id="detail" style="background:#fffbe6; max-width:100%; padding:3rem 2rem; border-top:3px solid #f0c400; border-bottom:3px solid #f0c400;" aria-labelledby="detail-heading">
+  <div style="max-width:760px; margin:0 auto;">
+    <p class="label" style="color:#b08d00;">Service</p>
+    <h2 id="detail-heading" style="color:#111;">サービスメニュー</h2>
+    <div style="display:flex; flex-direction:column; gap:1rem; margin-top:1.25rem;">
+
+      <div style="background:#fff; border:1px solid #f0c400; padding:1.25rem 1.5rem; display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:0.75rem;">
+        <div>
+          <p style="font-size:0.72rem; letter-spacing:0.12em; color:#b08d00; font-weight:700; margin-bottom:0.3rem;">FREE CONSULTATION</p>
+          <h3 style="font-size:1rem; margin-bottom:0.3rem;">無料相談（60分）</h3>
+          <p style="font-size:0.88rem; color:#555; margin-bottom:0;">自分の事業への適用可能性を一緒に考える</p>
+        </div>
+        <div style="text-align:right; flex-shrink:0;">
+          <p style="font-size:1.3rem; font-weight:700; color:#111; margin-bottom:0.1rem;">無料</p>
+          <span style="display:inline-block; background:#111; color:#fff; font-size:0.7rem; padding:0.2rem 0.6rem; letter-spacing:0.08em;">随時受付</span>
+        </div>
+      </div>
+
+      <div style="background:#fff; border:2px solid #f0c400; padding:1.25rem 1.5rem; display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:0.75rem; position:relative;">
+        <span style="position:absolute; top:-1px; left:1.5rem; background:#f0c400; color:#111; font-size:0.68rem; font-weight:700; padding:0.2rem 0.75rem; letter-spacing:0.1em;">RECOMMENDED</span>
+        <div style="margin-top:0.5rem;">
+          <p style="font-size:0.72rem; letter-spacing:0.12em; color:#b08d00; font-weight:700; margin-bottom:0.3rem;">SEMINAR</p>
+          <h3 style="font-size:1rem; margin-bottom:0.3rem;">Ontology経営勉強会</h3>
+          <p style="font-size:0.88rem; color:#555; margin-bottom:0;">実践者と共に自社Ontologyの設計を考える</p>
+        </div>
+        <div style="text-align:right; flex-shrink:0; margin-top:0.5rem;">
+          <p style="font-size:1.3rem; font-weight:700; color:#111; margin-bottom:0.1rem;">¥8,800<span style="font-size:0.8rem; font-weight:400;">（税込）/ 2h</span></p>
+          <span style="display:inline-block; background:#f0c400; color:#111; font-size:0.7rem; font-weight:700; padding:0.2rem 0.6rem; letter-spacing:0.08em;">随時受付中</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- SOVREN Framework（黒背景フルワイド・ページの核） -->
+<div id="sovereign" role="region" aria-labelledby="sovereign-heading">
+  <div class="inner">
+    <p class="label">SOVREN Framework</p>
+    <h2 id="sovereign-heading">教科書も、カリキュラムも、<br>すべて無料で公開しています。</h2>
+    <p>AI時代は、情報の陳腐化が速い。秘匿することに必然性がありません。</p>
+    <p>SOVREN Frameworkは、伊藤雄吉事務所が作り、無料で公開している実装フレームワークです。あなたの経験・判断基準・人間関係・行動履歴を構造化し、AIが使える状態にします。フレームワーク、教科書、テンプレート——個人情報を除くすべてを公開した上で、実践の質と関係性で差別化します。</p>
+
+    <a href="https://sovereign-framework.netlify.app/" target="_blank" rel="noopener" class="sovren-preview" aria-label="SOVREN Framework 教科書サイトを開く">
+      <div class="sovren-preview-header">
+        <span style="color:#fff; font-weight:700; font-size:0.95rem; letter-spacing:0.05em;">SOVREN Framework</span>
+        <span style="color:#a5b4fc; font-size:0.8rem;">経営判断を、AIで強くする。</span>
+      </div>
+      <div class="sovren-preview-body">
+        <p style="font-size:1.4rem; font-weight:700; color:#fff; margin-bottom:0.5rem;">経営判断を、AIで強くする。</p>
+        <p style="font-size:0.9rem; margin-bottom:1.5rem;">9つのスキルで、事業を伸ばし続ける。</p>
+        <div class="sovren-skills-grid">
+          <div class="sovren-skill-card">
+            <p style="font-size:0.75rem; color:#6366f1; font-weight:700; margin-bottom:0.25rem;">S1 / S6 / S7</p>
+            <p style="font-size:0.85rem; font-weight:700; color:#fff; margin-bottom:0.25rem;">自己主権：判断の土台を作る</p>
+            <p style="font-size:0.75rem; color:#888; margin-bottom:0;">自分の思考・判断基準をAIで管理・強化する</p>
+          </div>
+          <div class="sovren-skill-card">
+            <p style="font-size:0.75rem; color:#6366f1; font-weight:700; margin-bottom:0.25rem;">S2 / S3 / S4</p>
+            <p style="font-size:0.85rem; font-weight:700; color:#fff; margin-bottom:0.25rem;">声の主権：届けたい相手に届ける</p>
+            <p style="font-size:0.75rem; color:#888; margin-bottom:0;">市場をデータで選定し、SNS・メディアを自分でコントロール</p>
+          </div>
+        </div>
+        <p style="font-size:0.75rem; color:#6366f1; margin-top:1rem; text-align:right;">→ クリックして全スキルを見る</p>
+      </div>
+    </a>
+
+    <table aria-label="SOVRENスキル一覧">
+      <thead>
+        <tr><th>スキル</th><th>内容</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>S1 自分の情報体系を構築する</td><td>自分の事業・人脈・知識をパソコン上に整理し、AIが使える形にする</td></tr>
+        <tr><td>S2 情報をまとめて使えるようにする</td><td>バラバラな情報を統合し、意思決定に即使える状態にする</td></tr>
+        <tr><td>S3 行動履歴を管理する</td><td>AIを活用したSNS攻略。発信の記録と改善を自動化する</td></tr>
+        <tr><td>S4 ビジネスを多面展開する</td><td>一つの事業をパートナーと連携させ、複数の収益軸に広げる</td></tr>
+        <tr><td>S5 お金のデータを構築する</td><td>収支・資産・投資の記録をAIが扱える形に整え、財務判断を強化する</td></tr>
+        <tr><td>S6 スタッフ管理をAIで行う</td><td>採用・指示・評価の仕組みをAIで効率化し、管理コストを下げる</td></tr>
+        <tr><td>S7 AIを中心としたチームを作る</td><td>人とAIが連携する組織構造を設計し、少人数で大きく動く</td></tr>
+        <tr><td>S8 情報を統合し資本計画を最適化する</td><td>事業・財務・人材の情報を一元化し、投資判断の精度を上げる</td></tr>
+        <tr><td>S9 大量の資産をAIで管理する</td><td>複数の資産・案件・契約をAIに任せ、管理コストをゼロに近づける</td></tr>
+      </tbody>
+    </table>
+
+    <h3>まず、読んでみてください。</h3>
+    <p style="margin-top:0.5rem;">
+      <a href="https://sovereign-framework.netlify.app/" target="_blank" rel="noopener" class="btn" style="color:#fff; border-color:#fff; font-size:0.85rem; padding:0.6rem 1.5rem; display:inline-block; margin-top:0.5rem;">教科書を見る →</a>
+    </p>
+  </div>
+</div>
+
+<!-- 主催者 -->
+<section id="organizer" style="border-top:1px solid var(--border);" aria-labelledby="organizer-heading">
+  <p class="label">Organizer</p>
+  <h2 id="organizer-heading">主催者について</h2>
+  <p>伊藤雄吉事務所（設立予定）代表・伊藤雄吉が主宰します。</p>
+  <p>2004年の学生ベンチャー創業以来20年以上にわたり、教育・事業設計・投資の現場で活動してきました。2025年に株式譲渡を経て、現在は横浜を拠点に、Ontology incubationの普及と、実業をベースとした中小事業者のAI支援に取り組んでいます。</p>
+  <p>コンサルティングや出資・支援活動については <a href="https://kichisinger.netlify.app" target="_blank" rel="noopener">kichisinger.netlify.app</a> をご覧ください。</p>
+</section>
+
+<!-- レクチャー紹介 -->
+<section id="report" style="border-top:1px solid var(--border);" aria-labelledby="report-heading">
+  <p class="label">Lecture Log</p>
+  <h2 id="report-heading">レクチャー紹介</h2>
+
+  <article style="border:1px solid var(--border); padding:1.5rem; margin-top:1rem; background:var(--white);">
+    <p class="label">2026.06.18</p>
+    <h3>企画書を「制作OS」にする</h3>
+    <p>Markdownの企画書を起点に、AIでWebページを制作する実装回。目的、対象、必要情報、デザイン方針、入れてはいけない要素を先に定義し、生成・確認・修正の内容を企画書へ戻す流れを扱いました。</p>
+  </article>
+
+  <article style="border:1px solid var(--border); padding:1.5rem; margin-top:1.5rem; background:var(--white);">
+    <p class="label">2026.06.11</p>
+    <h3>AIエージェントに「仕事場」を渡す</h3>
+    <p>Cursor、Antigravity、Codex、Geminiなどの役割を整理し、参加者それぞれのPC上にAIが読める作業フォルダを構築。Raw Input、Project、Ontology、Action Logを分け、自分で制御できる運用を確認しました。</p>
+    <p style="margin-top:1.25rem;">
+      <a href="https://note.com/kichisinger/n/n115dd4246caa" target="_blank" rel="noopener" class="btn" style="font-size:0.85rem; padding:0.6rem 1.5rem; display:inline-block;">noteで全文を読む →</a>
+    </p>
+  </article>
+
+  <article style="border:1px solid var(--border); padding:1.5rem; margin-top:1.5rem; background:var(--light);">
+    <p class="label">2026.06.04</p>
+    <h3>AI時代の本質は「管理コストの激減」</h3>
+    <p>食品、不動産、教育の事業に引きつけながら、AIが変える競争構造を整理。大企業だけが持っていた管理の仕組みを、個人や小さな組織が扱えるようになるという前提を確認し、各自の情報本棚を作り始めました。</p>
+    <div class="photo-grid" role="list" aria-label="2026年6月4日レクチャー写真">
+      <img src="img/Image_20260604_190728_657.jpeg" alt="Ontology incubation 2026年6月4日レクチャーの様子" loading="lazy">
+      <img src="img/Image_20260604_190728_872.jpeg" alt="Ontology incubation 2026年6月4日ディスカッションの様子" loading="lazy">
+      <img src="img/Image_20260604_190729_413.jpeg" alt="Ontology incubation 2026年6月4日Ontology構築の様子" loading="lazy">
+    </div>
+  </article>
+</section>
+
+<!-- FAQ -->
+<section id="faq" style="border-top:1px solid var(--border);" aria-labelledby="faq-heading">
+  <p class="label">FAQ</p>
+  <h2 id="faq-heading">よくある質問</h2>
+  <div style="display:flex; flex-direction:column; gap:0.75rem; margin-top:1rem;">
+    <details style="border:1px solid var(--border); padding:1rem 1.25rem;">
+      <summary style="font-weight:700; font-size:0.95rem; cursor:pointer; list-style:none; display:flex; justify-content:space-between;">無料相談では何をするんですか？<span style="font-weight:400; color:var(--gray); font-size:1.1rem;">＋</span></summary>
+      <p style="margin-top:0.75rem; color:#444;">自分の事業にOntologyが使えるか、一緒に確認することから始めます。60分で事業の現状をお聞きし、適用可能性・優先すべきスキル・進め方を整理します。まず「使えるか」を判断するための時間です。</p>
+    </details>
+    <details style="border:1px solid var(--border); padding:1rem 1.25rem;">
+      <summary style="font-weight:700; font-size:0.95rem; cursor:pointer; list-style:none; display:flex; justify-content:space-between;">どのような業種・職種の方が対象ですか？<span style="font-weight:400; color:var(--gray); font-size:1.1rem;">＋</span></summary>
+      <p style="margin-top:0.75rem; color:#444;">飲食・不動産・教育・小売・製造・農業・サービス業など、実業をやっている事業者の方が対象です。AIやインターネットサービスのみを事業の主体とする業態の方、エンジニア向けの技術的な内容をお探しの方には向いていません。</p>
+    </details>
+    <details style="border:1px solid var(--border); padding:1rem 1.25rem;">
+      <summary style="font-weight:700; font-size:0.95rem; cursor:pointer; list-style:none; display:flex; justify-content:space-between;">SOVREN Frameworkとは何ですか？<span style="font-weight:400; color:var(--gray); font-size:1.1rem;">＋</span></summary>
+      <p style="margin-top:0.75rem; color:#444;">伊藤雄吉が20年以上の事業設計・教育の実践をもとに開発した実装フレームワークです。AIツールの使い方を学ぶのではなく、自分の事業の意思決定をAIで強化するための9つのスキル（S1〜S9）を体系化しています。すべての内容を無料で公開しています。</p>
+    </details>
+    <details style="border:1px solid var(--border); padding:1rem 1.25rem;">
+      <summary style="font-weight:700; font-size:0.95rem; cursor:pointer; list-style:none; display:flex; justify-content:space-between;">相談・申込はどうすればいいですか？<span style="font-weight:400; color:var(--gray); font-size:1.1rem;">＋</span></summary>
+      <p style="margin-top:0.75rem; color:#444;">X（Twitter）またはInstagramのDMよりご連絡ください。@kichisinger にDMをお送りください。無料相談・勉強会・法人導入・取材・協業、いずれもお気軽にどうぞ。</p>
+    </details>
+  </div>
+</section>
+
+<!-- 相談する -->
+<div id="contact" role="region" aria-labelledby="contact-heading">
+  <div class="inner">
+    <h2 id="contact-heading">あなたの現場に、<br>Ontologyを実装したい方へ。</h2>
+    <p>法人導入・勉強会・取材・協業については、以下よりお問い合わせください。</p>
+    <a href="https://x.com/kichisinger" target="_blank" rel="noopener" class="btn btn-fill" style="margin-right:1rem;">X（Twitter）でDM</a>
+    <a href="https://instagram.com/kichisinger" target="_blank" rel="noopener" class="btn" style="color:#fff; border-color:#fff; margin-top:1rem; display:inline-block;">Instagramでdm</a>
+    <a href="mailto:kichisinger@gmail.com" class="btn" style="color:#fff; border-color:#fff; margin-top:1rem; display:inline-block;">メールで問い合わせ</a>
+  </div>
+</div>
+
+<!-- 特定商取引法に基づく表記 -->
+<section id="legal" aria-labelledby="legal-heading">
+  <div class="inner">
+    <p class="label">Legal</p>
+    <h2 id="legal-heading">特定商取引法に基づく表記</h2>
+    <p>Ontology incubation Public Lab / Ontology経営勉強会の申込・決済に関する表示です。</p>
+
+    <table aria-label="特定商取引法に基づく表記">
+      <tbody>
+        <tr>
+          <th>販売事業者</th>
+          <td>伊藤雄吉相談所（屋号: Ontology incubation）</td>
+        </tr>
+        <tr>
+          <th>運営責任者</th>
+          <td>伊藤雄吉</td>
+        </tr>
+        <tr>
+          <th>所在地・電話番号</th>
+          <td>個人事業のため、請求があった場合には遅滞なく開示します。</td>
+        </tr>
+        <tr>
+          <th>連絡先</th>
+          <td><a href="mailto:kichisinger@gmail.com">kichisinger@gmail.com</a></td>
+        </tr>
+        <tr>
+          <th>販売価格・役務の対価</th>
+          <td>Ontology incubation Public Lab: 8,800円（税込）/ 1名 / 1回（2時間）</td>
+        </tr>
+        <tr>
+          <th>商品代金以外の必要料金</th>
+          <td>会場までの交通費、オンライン参加時の通信費等は参加者の負担となります。</td>
+        </tr>
+        <tr>
+          <th>支払時期・支払方法</th>
+          <td>受講前の事前決済。Square請求書によるクレジットカード等決済を基本とします。</td>
+        </tr>
+        <tr>
+          <th>役務の提供時期</th>
+          <td>Square請求書、案内メール、または個別連絡に記載した開催日時に提供します。</td>
+        </tr>
+        <tr>
+          <th>キャンセル・返金</th>
+          <td>開催前日18時までのキャンセルは全額返金します。それ以降のキャンセルは返金不可です。次回以降への振替は行いません。主催者都合で中止する場合は、全額返金します。</td>
+        </tr>
+        <tr>
+          <th>契約の成立</th>
+          <td>Square請求書本文に記載した受講条件を確認し、参加者が支払いを完了した時点で受講契約が成立します。</td>
+        </tr>
+        <tr>
+          <th>インボイス</th>
+          <td>現時点では適格請求書発行事業者ではありません。登録番号の記載がある適格請求書は発行していません。</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p class="note">法人研修、月額契約、個別コンサルティング等については、別途見積・契約条件を提示します。</p>
+
+    <div id="privacy" aria-labelledby="privacy-heading">
+      <p class="label">Privacy Policy</p>
+      <h2 id="privacy-heading">プライバシーポリシー</h2>
+      <p>伊藤雄吉相談所（屋号: Ontology incubation）は、問い合わせ、講義・ワークショップ運営、Square請求、参加者管理に必要な範囲で個人情報を取得し、適切に取り扱います。</p>
+
+      <table aria-label="プライバシーポリシー">
+        <tbody>
+          <tr>
+            <th>取得する情報</th>
+            <td>氏名、メールアドレス、所属、問い合わせ内容、参加履歴、出欠、相談内容、請求・支払状況、領収書宛名、Square請求書ID、アクセス解析情報等</td>
+          </tr>
+          <tr>
+            <th>利用目的</th>
+            <td>問い合わせ対応、講義・ワークショップの案内と運営、本人確認、請求・決済・返金対応、参加者台帳・会計記録の作成、サービス改善、重要なお知らせ、法令対応のため</td>
+          </tr>
+          <tr>
+            <th>第三者提供</th>
+            <td>本人の同意がある場合、法令に基づく場合、決済・請求・メール・アクセス解析・データ管理等に必要な範囲で外部サービスを利用する場合を除き、第三者へ提供しません。</td>
+          </tr>
+          <tr>
+            <th>外部サービス</th>
+            <td>Square、Gmail、Google Drive、Google Analytics等を利用する場合があります。各サービスでの取扱いは、それぞれの規約およびプライバシーポリシーに従います。</td>
+          </tr>
+          <tr>
+            <th>写真・録音・録画</th>
+            <td>記録、広報、開催レポート作成のため撮影・録音・録画を行う場合があります。顔出し、氏名掲載、発言引用を希望しない場合は、事前または撮影時に申し出ることができます。</td>
+          </tr>
+          <tr>
+            <th>開示・訂正・削除</th>
+            <td>本人から申し出があった場合、本人確認のうえ、法令に従い合理的な範囲で対応します。ただし、会計・税務・契約上保存が必要な情報は、必要な範囲で保存を継続することがあります。</td>
+          </tr>
+          <tr>
+            <th>問い合わせ先</th>
+            <td><a href="mailto:kichisinger@gmail.com">kichisinger@gmail.com</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- フッター -->
+<footer>
+  <p>© 2026 伊藤雄吉相談所 / Ontology incubation　<a href="#legal">特定商取引法に基づく表記</a>　<a href="#privacy">プライバシーポリシー</a></p>
+</footer>
+
+</body>
+</html>
